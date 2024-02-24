@@ -9,11 +9,8 @@ function run()   {
     const dir = core.getInput('dist-dir', {required: false});
     // Upload the files
     const s3Uri = `s3://${bucket}`;
-    exec.exec(`aws s3 sync ${dir} ${s3Uri} --region ${bucketRegion}`);
-
-
-    core.notice('Hello from my custom github actions');
-    
+    core.notice(`Uploading files from ${dir} to ${s3Uri} in ${bucketRegion}`);
+    exec.exec(`aws s3 sync ${dir} ${s3Uri} --region ${bucketRegion}`);    
 }
 
 run();
