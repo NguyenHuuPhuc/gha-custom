@@ -11,7 +11,7 @@ inputs:
   dist-dir:
     description: 'The directory to deploy'
     required: false
-    default: 'dist'
+    default: './dist'
 runs:
   using: 'node20'
   main: 'main.js'
