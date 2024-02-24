@@ -13,5 +13,5 @@ inputs:
     required: false
     default: 'dist'
 runs:
-  using: 'node18'
+  using: 'node16'
   main: 'main.js'
