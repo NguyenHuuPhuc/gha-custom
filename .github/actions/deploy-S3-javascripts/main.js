@@ -10,7 +10,9 @@ function run()   {
     // Upload the files
     const s3Uri = `s3://${bucket}`;
     core.notice(`Uploading files from ${dir} to ${s3Uri} in ${bucketRegion}`);
-    exec.exec(`aws s3 sync ${dir} ${s3Uri} --region ${bucketRegion}`);    
+    exec.exec(`aws s3 sync ${dir} ${s3Uri} --region ${bucketRegion}`);  
+    const websiteUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+    core.setOutput('website-url', websiteUrl);  
 }
 
 run();
